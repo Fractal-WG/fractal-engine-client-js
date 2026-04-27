@@ -5,18 +5,18 @@
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import { file_buf_validate_validate } from "./buf/validate/validate_pb.js";
-import { file_google_protobuf_struct, file_google_protobuf_wrappers } from "@bufbuild/protobuf/wkt";
-import type { TokenBalance } from "./common_pb.js";
+import { file_google_protobuf_wrappers } from "@bufbuild/protobuf/wkt";
+import type { TokenBalance, TokenBalanceWithMint } from "./common_pb.js";
 import { file_common } from "./common_pb.js";
 import type { Address, Hash } from "./types_pb.js";
 import { file_types } from "./types_pb.js";
-import type { JsonObject, Message } from "@bufbuild/protobuf";
+import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file tokens.proto.
  */
 export const file_tokens: GenFile = /*@__PURE__*/
-  fileDesc("Cgx0b2tlbnMucHJvdG8SFGZyYWN0YWxlbmdpbmUucnBjLnYxIn8KHkdldFBlbmRpbmdUb2tlbkJhbGFuY2VzUmVxdWVzdBIuCgdhZGRyZXNzGAEgASgLMh0uZnJhY3RhbGVuZ2luZS5ycGMudjEuQWRkcmVzcxItCgltaW50X2hhc2gYAiABKAsyGi5mcmFjdGFsZW5naW5lLnJwYy52MS5IYXNoIlcKH0dldFBlbmRpbmdUb2tlbkJhbGFuY2VzUmVzcG9uc2USNAoIYmFsYW5jZXMYASADKAsyIi5mcmFjdGFsZW5naW5lLnJwYy52MS5Ub2tlbkJhbGFuY2UiiQIKF0dldFRva2VuQmFsYW5jZXNSZXF1ZXN0Ei4KB2FkZHJlc3MYASABKAsyHS5mcmFjdGFsZW5naW5lLnJwYy52MS5BZGRyZXNzEi0KCW1pbnRfaGFzaBgCIAEoCzIaLmZyYWN0YWxlbmdpbmUucnBjLnYxLkhhc2gSOAoUaW5jbHVkZV9taW50X2RldGFpbHMYAyABKAsyGi5nb29nbGUucHJvdG9idWYuQm9vbFZhbHVlEioKBWxpbWl0GAQgASgLMhsuZ29vZ2xlLnByb3RvYnVmLkludDMyVmFsdWUSKQoEcGFnZRgFIAEoCzIbLmdvb2dsZS5wcm90b2J1Zi5JbnQzMlZhbHVlIkEKGEdldFRva2VuQmFsYW5jZXNSZXNwb25zZRIlCgRkYXRhGAEgASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdEIuWixkb2dlY29pbi5vcmcvZnJhY3RhbC1lbmdpbmUvcGtnL3JwYy9wcm90b2NvbGIIZWRpdGlvbnNw6Ac", [file_buf_validate_validate, file_google_protobuf_struct, file_google_protobuf_wrappers, file_common, file_types]);
+  fileDesc("Cgx0b2tlbnMucHJvdG8SFGZyYWN0YWxlbmdpbmUucnBjLnYxIn8KHkdldFBlbmRpbmdUb2tlbkJhbGFuY2VzUmVxdWVzdBIuCgdhZGRyZXNzGAEgASgLMh0uZnJhY3RhbGVuZ2luZS5ycGMudjEuQWRkcmVzcxItCgltaW50X2hhc2gYAiABKAsyGi5mcmFjdGFsZW5naW5lLnJwYy52MS5IYXNoIlcKH0dldFBlbmRpbmdUb2tlbkJhbGFuY2VzUmVzcG9uc2USNAoIYmFsYW5jZXMYASADKAsyIi5mcmFjdGFsZW5naW5lLnJwYy52MS5Ub2tlbkJhbGFuY2UiiQIKF0dldFRva2VuQmFsYW5jZXNSZXF1ZXN0Ei4KB2FkZHJlc3MYASABKAsyHS5mcmFjdGFsZW5naW5lLnJwYy52MS5BZGRyZXNzEi0KCW1pbnRfaGFzaBgCIAEoCzIaLmZyYWN0YWxlbmdpbmUucnBjLnYxLkhhc2gSOAoUaW5jbHVkZV9taW50X2RldGFpbHMYAyABKAsyGi5nb29nbGUucHJvdG9idWYuQm9vbFZhbHVlEioKBWxpbWl0GAQgASgLMhsuZ29vZ2xlLnByb3RvYnVmLkludDMyVmFsdWUSKQoEcGFnZRgFIAEoCzIbLmdvb2dsZS5wcm90b2J1Zi5JbnQzMlZhbHVlIrcBChhHZXRUb2tlbkJhbGFuY2VzUmVzcG9uc2USNAoIYmFsYW5jZXMYASADKAsyIi5mcmFjdGFsZW5naW5lLnJwYy52MS5Ub2tlbkJhbGFuY2USDQoFbGltaXQYAiABKAUSOQoFbWludHMYAyADKAsyKi5mcmFjdGFsZW5naW5lLnJwYy52MS5Ub2tlbkJhbGFuY2VXaXRoTWludBIMCgRwYWdlGAQgASgFEg0KBXRvdGFsGAUgASgFQi5aLGRvZ2Vjb2luLm9yZy9mcmFjdGFsLWVuZ2luZS9wa2cvcnBjL3Byb3RvY29sYghlZGl0aW9uc3DoBw", [file_buf_validate_validate, file_google_protobuf_wrappers, file_common, file_types]);
 
 /**
  * @generated from message fractalengine.rpc.v1.GetPendingTokenBalancesRequest
@@ -99,9 +99,29 @@ export const GetTokenBalancesRequestSchema: GenMessage<GetTokenBalancesRequest> 
  */
 export type GetTokenBalancesResponse = Message<"fractalengine.rpc.v1.GetTokenBalancesResponse"> & {
   /**
-   * @generated from field: google.protobuf.Struct data = 1;
+   * @generated from field: repeated fractalengine.rpc.v1.TokenBalance balances = 1;
    */
-  data?: JsonObject | undefined;
+  balances: TokenBalance[];
+
+  /**
+   * @generated from field: int32 limit = 2;
+   */
+  limit: number;
+
+  /**
+   * @generated from field: repeated fractalengine.rpc.v1.TokenBalanceWithMint mints = 3;
+   */
+  mints: TokenBalanceWithMint[];
+
+  /**
+   * @generated from field: int32 page = 4;
+   */
+  page: number;
+
+  /**
+   * @generated from field: int32 total = 5;
+   */
+  total: number;
 };
 
 /**
