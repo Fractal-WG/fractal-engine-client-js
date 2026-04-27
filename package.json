@@ -16,15 +16,16 @@
     }
   },
   "scripts": {
+    "prepare": "tsup",
     "build": "tsup",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@bufbuild/protobuf": "^2.11.0",
-    "tsup": "^8.5.1",
-    "typescript": "^5.9.3"
+    "@bufbuild/protobuf": "^2.11.0"
   },
   "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
     "@types/node": "^25.0.10"
   }
 }
